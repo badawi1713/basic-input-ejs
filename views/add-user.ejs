@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+  </script>
+</head>
+
+<body>
+  <main>
+      <div class="container">
+        <div class="container">
+          <h1 style="text-align: center;" class="display-4">Insert New Data</h1>
+          <div class="alert alert-success" role="alert">
+            <p class="lead">Please insert new user data on this form, then click submit!</p>
+          </div>
+         
+        </div>
+
+        <div class="container">
+            <form action="/create" method="POST">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Fullname</label>
+                    <input required name="fullname" type="text" class="form-control" placeholder="Enter fullname; e.g Dzaky Badawi">
+                  </div>
+                  <div class="form-group">
+                    <label>Gender</label>
+                    <div class="form-check">
+                        <input required class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="male">
+                        <label class="form-check-label" for="exampleRadios2">
+                          Male
+                         </label>
+                      </div>
+                      <div class="form-check">
+                        <input required class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="female">
+                        <label class="form-check-label" for="exampleRadios2">
+                          Female
+                        </label>
+                      </div>
+                </div>
+                <div class="form-group">
+                  <label>Institution</label>
+                  <input required type="text" class="form-control" name="institution" placeholder="Enter institution's name; e.g SMAN 5 Balikpapan">
+                </div>
+  
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Address</label>
+                    <textarea required name="address" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                  <a class="btn btn-primary" href="/" role="button">Cancel</a>
+                <button type="submit" class="btn btn-success">Submit</button>
+              </form>
+          
+        </div>
+      </div>
+
+  </main>
+</body>
+
+</html>

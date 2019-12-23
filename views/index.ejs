@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+  </script>
+</head>
+
+<body>
+  <main>
+      <div class="container">
+        <div class="container">
+          <h1 style="text-align: center;" class="display-4">Basic Insert Data</h1>
+          <p class="lead"> <i>Arkademy BetaClass assignment; how to insert data and display it with Node.js, Mongoose, EJS and Express. </i> <br/> (By Dzaky Badawi)</p>
+        </div>
+
+        <div class="container">
+          <a style="margin-bottom: 20px; float: right;" class="btn btn-primary" href="/create" role="button">+ Add New User</a>
+          <br>
+        </div>
+        
+        <div class="container">
+          <% if (user.length > 0) { %>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Fullname</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Institution</th>
+                <th class="scope">Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <% for (var i = 0, no = 1; no && i<user.length; i++, no++) { %>
+                <th scope="row"><%= no %></th>
+                <td><%= user[i].fullname %></td>
+                <td><%= user[i].gender %></td>
+                <td><%= user[i].institution %></td>
+                <td><%= user[i].address %></td>
+              </tr>
+              <%}%>
+            </tbody>
+          </table>
+          <% } else { %>
+            <div class="alert alert-danger" role="alert">
+            <p class="lead">No users data found! Please click add new user button to insert.</p>
+          </div>
+                    <% } %>
+        </div>
+      </div>
+
+  </main>
+</body>
+
 </html>
